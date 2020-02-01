@@ -1,0 +1,1390 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/9fa70d0ed9c34a8ed445ceee3494d3d7de7f8918/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>BDD_AdvantageMobileShopping - Cucumber e Appium Framework</title>
+
+</head>
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Relatorio - AdvantageMobileShopping</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+				<span class='label suite-start-time'>Feb 1, 2020 5:28:29 PM</span>
+			</a>
+			<a href='#!'>
+				<span class='label'>v3.0.3</span>
+			</a>
+		</ul>
+	</div>
+</nav>
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@BuscarUmProduto</a></li>
+					<li><a href='#'>@TestePositivo</a></li>
+					<li><a href='#'>@TesteNegativo</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span><span class='strong'>8</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong'>0</span> test(s) failed, <span class='strong'>24</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span><span class='strong'>0</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong'>0</span> step(s) failed, <span class='strong'>26</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h3>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf skip' status='skip' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Buscar um produto</span>
+						<span class='test-time'>Feb 1, 2020 5:28:29 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 1, 2020 5:28:29 PM</span>
+	<span class='label end-time'>Feb 1, 2020 5:28:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+125ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>@BuscarUmProduto</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='2'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Esquema do Cenario: Buscar um produto existente</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:29 PM</span>
+						<span class='node-duration'>0h 0m 0s+3ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='info'>
+													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+													<td class='timestamp'>5:28:29 PM</td>
+													<td class='step-details'><table><tr><td>Produto</td></tr><tr><td>HP USB 3 BUTTON OPTICAL MOUSE</td></tr><tr><td>LOGITECH USB HEADSET H390</td></tr><tr><td>HP STREAM - 11-D020NR LAPTOP</td></tr></table></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1  skip' status='skip' test-id='3'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Buscar um produto existente</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:29 PM</span>
+						<span class='node-duration'>0h 0m 0s+91ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='4'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela principal do aplicativo android advantage mobile shopping</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:29 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='5'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E o usuario tocou no icone da lupa</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='6'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E buscou no campo de busca o "HP USB 3 BUTTON OPTICAL MOUSE"</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='7'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Entao a pagina do resultado aparecera com o resultado da busca "HP USB 3 BUTTON OPTICAL MOUSE"</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='8'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E o usuario toca no produto</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='9'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Entao a pagina do "HP USB 3 BUTTON OPTICAL MOUSE" sera exibida</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+				<li class='node level-1  skip' status='skip' test-id='10'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Buscar um produto existente</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+3ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='11'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela principal do aplicativo android advantage mobile shopping</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='12'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E o usuario tocou no icone da lupa</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='13'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E buscou no campo de busca o "LOGITECH USB HEADSET H390"</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='14'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Entao a pagina do resultado aparecera com o resultado da busca "LOGITECH USB HEADSET H390"</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='15'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E o usuario toca no produto</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='16'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Entao a pagina do "LOGITECH USB HEADSET H390" sera exibida</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+				<li class='node level-1  skip' status='skip' test-id='17'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Buscar um produto existente</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+3ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='18'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela principal do aplicativo android advantage mobile shopping</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='19'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E o usuario tocou no icone da lupa</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='20'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E buscou no campo de busca o "HP STREAM - 11-D020NR LAPTOP"</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='21'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Entao a pagina do resultado aparecera com o resultado da busca "HP STREAM - 11-D020NR LAPTOP"</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='22'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E o usuario toca no produto</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='23'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Entao a pagina do "HP STREAM - 11-D020NR LAPTOP" sera exibida</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='24'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Esquema do Cenario: Buscar um produto nexistente</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='info'>
+													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'><table><tr><td>Produto</td></tr><tr><td>iphone</td></tr><tr><td>Samsung</td></tr><tr><td>Xiaomi</td></tr></table></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1  skip' status='skip' test-id='25'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Buscar um produto nexistente</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+3ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='26'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela principal do aplicativo android advantage mobile shopping</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='27'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E o usuario tocou no icone da lupa</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='28'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E buscou no campo de busca o "iphone"</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='29'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Entao aparecera uma pagina informando que o produto "iphone" nao foi encontrado</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+				<li class='node level-1  skip' status='skip' test-id='30'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Buscar um produto nexistente</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+3ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='31'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela principal do aplicativo android advantage mobile shopping</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='32'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E o usuario tocou no icone da lupa</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='33'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E buscou no campo de busca o "Samsung"</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='34'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Entao aparecera uma pagina informando que o produto "Samsung" nao foi encontrado</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+				<li class='node level-1  skip' status='skip' test-id='35'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Buscar um produto nexistente</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+2ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='36'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela principal do aplicativo android advantage mobile shopping</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='37'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E o usuario tocou no icone da lupa</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='38'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E buscou no campo de busca o "Xiaomi"</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf skip' status='skip' test-id='39'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Entao aparecera uma pagina informando que o produto "Xiaomi" nao foi encontrado</div>						
+						<span class='node-time'>Feb 1, 2020 5:28:30 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'>skipped</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view --><div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@BuscarUmProduto</span>
+						<span class='category-status right'>
+							<span class='label others'>7</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							
+							<span class='label yellow darken-2 white-text'>Others: 7</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 1, 2020 5:28:29 PM</td>
+										<td class='linked' test-id='1'>Buscar um produto</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 1, 2020 5:28:29 PM</td>
+										<td class='linked' test-id='3'>Buscar um produto.Scenario: Buscar um produto existente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 1, 2020 5:28:30 PM</td>
+										<td class='linked' test-id='10'>Buscar um produto.Scenario: Buscar um produto existente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 1, 2020 5:28:30 PM</td>
+										<td class='linked' test-id='17'>Buscar um produto.Scenario: Buscar um produto existente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 1, 2020 5:28:30 PM</td>
+										<td class='linked' test-id='25'>Buscar um produto.Scenario: Buscar um produto nexistente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 1, 2020 5:28:30 PM</td>
+										<td class='linked' test-id='30'>Buscar um produto.Scenario: Buscar um produto nexistente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 1, 2020 5:28:30 PM</td>
+										<td class='linked' test-id='35'>Buscar um produto.Scenario: Buscar um produto nexistente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TestePositivo</span>
+						<span class='category-status right'>
+							<span class='label others'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							
+							<span class='label yellow darken-2 white-text'>Others: 3</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 1, 2020 5:28:29 PM</td>
+										<td class='linked' test-id='3'>Buscar um produto.Scenario: Buscar um produto existente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 1, 2020 5:28:30 PM</td>
+										<td class='linked' test-id='10'>Buscar um produto.Scenario: Buscar um produto existente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 1, 2020 5:28:30 PM</td>
+										<td class='linked' test-id='17'>Buscar um produto.Scenario: Buscar um produto existente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TesteNegativo</span>
+						<span class='category-status right'>
+							<span class='label others'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							
+							<span class='label yellow darken-2 white-text'>Others: 3</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 1, 2020 5:28:30 PM</td>
+										<td class='linked' test-id='25'>Buscar um produto.Scenario: Buscar um produto nexistente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 1, 2020 5:28:30 PM</td>
+										<td class='linked' test-id='30'>Buscar um produto.Scenario: Buscar um produto nexistente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 1, 2020 5:28:30 PM</td>
+										<td class='linked' test-id='35'>Buscar um produto.Scenario: Buscar um produto nexistente</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>32</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>26</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Feb 1, 2020 5:28:29 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Feb 1, 2020 5:28:30 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>207ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>User Name</td>
+								<td>george.junior</td>
+							</tr>
+							<tr>
+								<td>Time zone</td>
+								<td>America/Sao_Paulo</td>
+							</tr>
+							<tr>
+								<td>Machine</td>
+								<td>Windows 1064 Bit</td>
+							</tr>
+							<tr>
+								<td>Android</td>
+								<td>9 Nexus 5</td>
+							</tr>
+							<tr>
+								<td>Appium</td>
+								<td>7.0.0</td>
+							</tr>
+							<tr>
+								<td>cucumber-java</td>
+								<td>1.2.5</td>
+							</tr>
+							<tr>
+								<td>cucumber-junit</td>
+								<td>1.2.5</td>
+							</tr>
+							<tr>
+								<td>Maven</td>
+								<td>4.0.0</td>
+							</tr>
+							<tr>
+								<td>Java Version</td>
+								<td>1.8</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+						</tr>
+						<tr>
+							<td>@BuscarUmProduto</td>
+							<td>0</td>
+							<td>0</td>
+							<td>7</td>
+						</tr>
+						<tr>
+							<td>@TestePositivo</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>@TesteNegativo</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view --><!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 8,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 24,
+				exceptionsParent: 24,
+				
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 24,
+				infoChild: 2,
+				exceptionsChild: 24,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/9fa70d0ed9c34a8ed445ceee3494d3d7de7f8918/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+	</body>
+	
+</html>
