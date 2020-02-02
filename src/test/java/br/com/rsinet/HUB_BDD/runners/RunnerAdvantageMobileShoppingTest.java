@@ -15,7 +15,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(features = "src/test/resources/feature",
 					glue = "br.com.rsinet.HUB_BDD.steps", 
 					tags = {
-							
+//							"@BuscarUmProduto"
+
 							},
 					plugin = { "pretty", 
 								//"html:target/report-html",

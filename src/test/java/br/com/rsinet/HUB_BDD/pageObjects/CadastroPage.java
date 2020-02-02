@@ -1,5 +1,6 @@
 package br.com.rsinet.HUB_BDD.pageObjects;
 
+
 import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
@@ -27,7 +28,7 @@ public class CadastroPage {
 
 	private WebElement getEmail() {
 		return driver.findElement(
-				By.xpath("\"//*[@resource-id='com.Advantage.aShopping:id/AosEditTextEmail']/child::*[1]\""));
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextEmail']/child::*[1]"));
 	}
 
 	private WebElement getSenha() {
@@ -47,7 +48,7 @@ public class CadastroPage {
 
 	private WebElement getSobreNome() {
 		return driver.findElement(
-				By.xpath("\"//*[@resource-id='com.Advantage.aShopping:id/AosEditTextLastName']/child::*[1]\""));
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextLastName']/child::*[1]"));
 	}
 
 	private WebElement getTelefone() {
@@ -187,5 +188,7 @@ public class CadastroPage {
 
 		return this;
 	}
+	
+	
 
 }

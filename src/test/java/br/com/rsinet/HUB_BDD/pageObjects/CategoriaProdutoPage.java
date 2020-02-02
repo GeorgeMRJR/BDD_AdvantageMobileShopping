@@ -17,6 +17,15 @@ public class CategoriaProdutoPage {
 		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewNoProductsToShow")).getText();
 	}
 
+	public String txtCategoria() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewAdvantage")).getText();
+	}
+
 	public void clicarproduto(String produto) {
 		for (int j = 0; j < getProduto().size(); j++) {
 			WebElement element = getProduto().get(j);
@@ -28,7 +37,8 @@ public class CategoriaProdutoPage {
 	}
 
 	private List<WebElement> getProduto() {
-		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewProductName"));
+
+		return driver.findElements(By.id("com.Advantage.aShopping:id/textViewProductName"));
 	}
 
 }
