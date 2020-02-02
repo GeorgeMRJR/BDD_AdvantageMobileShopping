@@ -2,28 +2,24 @@ package br.com.rsinet.HUB_BDD.pageObjects;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class CategoriaProdutoPage {
-//	private WebDriver driver;
+	private WebDriver driver;
 
 	public CategoriaProdutoPage(WebDriver driver) {
-//		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 
-	@FindBy(id = "com.Advantage.aShopping:id/textViewProductName")
-	private List<WebElement> Produto;
-
-	@FindBy(id = "com.Advantage.aShopping:id/textViewNoProductsToShow")
-	private WebElement produtoNaoEncontrado;
+	public String ProdutoNaoEncontrado() {
+		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewNoProductsToShow")).getText();
+	}
 
 	public void clicarproduto(String produto) {
-		for (int j = 0; j < Produto.size(); j++) {
-			WebElement element = Produto.get(j);
+		for (int j = 0; j < getProduto().size(); j++) {
+			WebElement element = getProduto().get(j);
 			if (element.getText().contains(produto)) {
 				element.click();
 				break;
@@ -31,8 +27,8 @@ public class CategoriaProdutoPage {
 		}
 	}
 
-	public String ProdutoNaoEncontrado() {
-		return produtoNaoEncontrado.getText();
+	private List<WebElement> getProduto() {
+		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewProductName"));
 	}
 
 }

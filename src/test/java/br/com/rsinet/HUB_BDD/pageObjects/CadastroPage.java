@@ -1,13 +1,10 @@
 package br.com.rsinet.HUB_BDD.pageObjects;
 
 import java.net.MalformedURLException;
-import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,54 +14,78 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class CadastroPage {
 
+	private WebDriver driver;
+
 	public CadastroPage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 
-	@FindBy(className = "android.widget.RelativeLayout")
-	private List<WebElement> elementos;
+	private WebElement getUsername() {
+		return driver.findElement(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextUserName']/child::*[1]"));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextUserName']/child::*[1]")
-	private WebElement uername;
+	private WebElement getEmail() {
+		return driver.findElement(
+				By.xpath("\"//*[@resource-id='com.Advantage.aShopping:id/AosEditTextEmail']/child::*[1]\""));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextEmail']/child::*[1]")
-	private WebElement email;
+	private WebElement getSenha() {
+		return driver.findElement(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextPassword']/child::*[1]"));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextPassword']/child::*[1]")
-	private WebElement senha;
+	private WebElement getReSenha() {
+		return driver.findElement(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextConfirmPassword']/child::*[1]"));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextConfirmPassword']/child::*[1]")
-	private WebElement reSenha;
+	private WebElement getPrimeiroNome() {
+		return driver.findElement(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextFirstName']/child::*[1]"));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextFirstName']/child::*[1]")
-	private WebElement primeiroNome;
+	private WebElement getSobreNome() {
+		return driver.findElement(
+				By.xpath("\"//*[@resource-id='com.Advantage.aShopping:id/AosEditTextLastName']/child::*[1]\""));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextLastName']/child::*[1]")
-	private WebElement sobreNome;
+	private WebElement getTelefone() {
+		return driver.findElement(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextPhoneNumber']/child::*[1]"));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextPhoneNumber']/child::*[1]")
-	private WebElement telefone;
+	private WebElement getEstado() {
+		return driver
+				.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextState']/child::*[1]"));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextState']/child::*[1]")
-	private WebElement estado;
+	private WebElement getCidade() {
+		return driver
+				.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextCity']/child::*[1]"));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextCity']/child::*[1]")
-	private WebElement cidade;
+	private WebElement getEndereco() {
+		return driver
+				.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextStreet']/child::*[1]"));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextStreet']/child::*[1]")
-	private WebElement endereco;
+	private WebElement getCep() {
+		return driver
+				.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextZip']/child::*[1]"));
+	}
 
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextZip']/child::*[1]")
-	private WebElement cep;
+	private WebElement getContinente() {
+		return driver.findElement(By.xpath("com.Advantage.aShopping:id/textViewCountriesTitle"));
+	}
+//
+//	private WebElement getContinentes() {
+//		return driver.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/select_dialog_listview']"));
+//	}
 
-	@FindBy(id = "com.Advantage.aShopping:id/textViewCountriesTitle")
-	private WebElement continente;
-
-	@FindBy(xpath = "//*[@resource-id='com.Advantage.aShopping:id/select_dialog_listview']")
-	private WebElement continentes;
-
-	@FindBy(className = "android.widget.Button")
-	private WebElement btnRegistrar;
+	private WebElement getBtnRegistrar() {
+		return driver.findElement(By.className("android.widget.Button"));
+	}
 
 	public CadastroPage enter() throws MalformedURLException {
 		(new TouchAction<>(Driver.getDriver())).tap(PointOption.point(985, 1699)).perform();
@@ -72,73 +93,73 @@ public class CadastroPage {
 	}
 
 	public CadastroPage digitarUserName(String userNameTxt) {
-		uername.click();
-		uername.sendKeys(userNameTxt);
+		getUsername().click();
+		getUsername().sendKeys(userNameTxt);
 		return this;
 	}
 
 	public CadastroPage digitarEmail(String emailTxt) {
-		email.click();
-		email.sendKeys(emailTxt);
+		getEmail().click();
+		getEmail().sendKeys(emailTxt);
 		return this;
 	}
 
 	public CadastroPage digitarSenha(String senhaTxt) {
-		senha.click();
-		senha.sendKeys(senhaTxt);
+		getSenha().click();
+		getSenha().sendKeys(senhaTxt);
 		return this;
 	}
 
 	public CadastroPage digitarReSenha(String reSenhaTxt) {
-		reSenha.click();
-		reSenha.sendKeys(reSenhaTxt);
+		getReSenha().click();
+		getReSenha().sendKeys(reSenhaTxt);
 		return this;
 	}
 
 	public CadastroPage digitarNome(String nomeTxt) {
-		primeiroNome.click();
-		primeiroNome.sendKeys(nomeTxt);
+		getPrimeiroNome().click();
+		getPrimeiroNome().sendKeys(nomeTxt);
 		return this;
 	}
 
 	public CadastroPage digitarSobreNome(String sobreNomeTxt) {
-		sobreNome.click();
-		sobreNome.sendKeys(sobreNomeTxt);
+		getSobreNome().click();
+		getSobreNome().sendKeys(sobreNomeTxt);
 		return this;
 	}
 
 	public CadastroPage digitarTelefone(String telefoneTxt) {
-		telefone.click();
-		telefone.sendKeys(telefoneTxt);
+		getTelefone().click();
+		getTelefone().sendKeys(telefoneTxt);
 		return this;
 	}
 
 	public CadastroPage digitarEstado(String estadoTxt) {
-		estado.click();
-		estado.sendKeys(estadoTxt);
+		getEstado().click();
+		getEstado().sendKeys(estadoTxt);
 		return this;
 	}
 
 	public CadastroPage digitarCidade(String cidadeTxt) {
-		cidade.click();
-		cidade.sendKeys(cidadeTxt);
+		getCidade().click();
+		getCidade().sendKeys(cidadeTxt);
 		return this;
 	}
 
 	public CadastroPage digitarEndereco(String enderecoTxt) {
-		endereco.click();
-		endereco.sendKeys(enderecoTxt);
+		getEndereco().click();
+		getEndereco().sendKeys(enderecoTxt);
 		return this;
 	}
 
 	public CadastroPage digitarCep(String cepTxt) {
-		cep.click();
-		cep.sendKeys(cepTxt);
+		getCep().click();
+		getCep().sendKeys(cepTxt);
 		return this;
 	}
 
 	public CadastroPage clicarContinente() {
-		continente.click();
+		getContinente().click();
 		return this;
 	}
 
@@ -148,7 +169,7 @@ public class CadastroPage {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		btnRegistrar.click();
+		getBtnRegistrar().click();
 
 		WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.Advantage.aShopping:id/imageViewMenu")));

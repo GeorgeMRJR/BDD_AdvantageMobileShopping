@@ -1,38 +1,26 @@
 package br.com.rsinet.HUB_BDD.pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class MenuPage {
-//	private WebDriver driver;
+	private WebDriver driver;
 
 	public MenuPage(WebDriver driver) {
-//		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 
-	@FindBy(id = "com.Advantage.aShopping:id/textViewMenuUser")
-	private WebElement login;
-	
-	@FindBy(id = "com.Advantage.aShopping:id/textViewMenuSignOut")
-	private WebElement logOut;
-	
-	@FindBy(id = "com.Advantage.aShopping:id/imageViewMenu")
-	private WebElement menu;
-	
-	public void abrir() {
-		menu.click();
+	public void abrirMenu() {
+		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewMenu")).click();
 	}
 
 	public void clicarLogin() {
-		login.click();
+		driver.findElement(By.id("com.Advantage.aShopping:id/textViewMenuUser")).click();
 	}
-	
+
 	public boolean logado() {
 		try {
-			return logOut.isDisplayed();
+			return driver.findElement(By.id("com.Advantage.aShopping:id/textViewMenuSignOut")).isDisplayed();
 		} catch (Exception e) {
 			return false;
 		}
