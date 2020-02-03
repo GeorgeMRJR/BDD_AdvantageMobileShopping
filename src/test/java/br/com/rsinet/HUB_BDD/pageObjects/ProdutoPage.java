@@ -14,4 +14,18 @@ public class ProdutoPage {
 		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewProductName")).getText();
 	}
 
+	public String qtdProdutoCarrinho() {
+		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewCartLength")).getText();
+	}	
+	
+	public void clicarQtd() {
+		driver.findElement(By.id("com.Advantage.aShopping:id/textViewProductQuantity")).click();
+	}
+
+	public void colocarQtd(String qtd) {
+		driver.findElement(By.id("com.Advantage.aShopping:id/textViewProductQuantity")).sendKeys(qtd);
+	}	
+	
+
 }
+

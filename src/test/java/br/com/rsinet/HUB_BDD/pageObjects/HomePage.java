@@ -22,6 +22,9 @@ public class HomePage {
 	public void clicarMenu() {
 		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewMenu")).click();
 	}
+	public void clicarCarrinho() {
+		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewCart")).click();
+	}
 
 	public void clicarCategoria(String Categoria) {
 		switch (Categoria) {

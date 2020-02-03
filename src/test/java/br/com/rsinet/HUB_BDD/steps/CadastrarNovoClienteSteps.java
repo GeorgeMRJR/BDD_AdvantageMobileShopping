@@ -1,7 +1,6 @@
 package br.com.rsinet.HUB_BDD.steps;
 
 import java.net.MalformedURLException;
-import java.util.Random;
 
 import org.junit.Assert;
 
@@ -51,8 +50,10 @@ public class CadastrarNovoClienteSteps {
 	public void aTelaDeCadastroAbrira() {
 
 	}
+
 	@Entao("^Digito o nome de usuario \"([^\"]*)\"$")
 	public void digitoONomeDeUsuario(String userNameTxt) throws MalformedURLException {
+		
 		cadastroPage.digitarUserName(userNameTxt).enter();
 	}
 
@@ -150,7 +151,6 @@ public class CadastrarNovoClienteSteps {
 	@Entao("^Digito o nome de usuario ja existente \"([^\"]*)\"$")
 	public void digitoONomeDeUsuarioJaExistente(String userNameTxt) throws MalformedURLException {
 		cadastroPage.digitarUserName(userNameTxt).enter();
-
 	}
 
 	@Entao("^o cadastro nao sera realisado$")
