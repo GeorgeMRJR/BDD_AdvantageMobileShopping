@@ -13,8 +13,8 @@ import br.com.rsinet.HUB_BDD.pageObjects.LoginPage;
 import br.com.rsinet.HUB_BDD.pageObjects.MenuPage;
 import br.com.rsinet.HUB_BDD.pageObjects.ProdutoPage;
 import br.com.rsinet.HUB_BDD.suporte.Driver;
-import cucumber.api.PendingException;
 import cucumber.api.java.pt.Dado;
+import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 
 public class AbrirUmProdutoPelaHomeSteps {
@@ -36,8 +36,8 @@ public class AbrirUmProdutoPelaHomeSteps {
 		menuPage = new MenuPage(driver);
 	}
 
-	@Dado("^toco na categoria \"([^\"]*)\"$")
-	public void tocoNaCategoria(String categoria) {
+	@E("^toco na categoria \"([^\"]*)\"$")
+	public void tocoNaCategoria(String categoria) throws MalformedURLException {
 		homePage.clicarCategoria(categoria);
 	}
 
@@ -63,34 +63,26 @@ public class AbrirUmProdutoPelaHomeSteps {
 		menuPage.abrirMenu();
 		menuPage.clicarLogin();
 		loginPage.clicarNovaConta();
-		cadastroPage.digitarUserName("testeCarrinho" + new Random().nextInt(100)).enter();
+		cadastroPage.digitarUserName("Carrinho" + new Random().nextInt(1000)).enter();
 		cadastroPage.digitarEmail("teste@teste.com").enter();
 		cadastroPage.digitarSenha("Abc123").enter();
 		cadastroPage.digitarReSenha("Abc123");
-		try {
-			Driver.getDriver().hideKeyboard();
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-		cadastroPage.scroll();
-		cadastroPage.scroll();
-		cadastroPage.scroll();
+
 		cadastroPage.registrar();
 
 	}
 
-	@Entao("^coloco (\\d+) itens do produto$")
-	public void colocoItensDoProduto(int arg1) throws MalformedURLException  {
+	@Entao("^coloco vinte itens do produto$")
+	public void colocoItensDoProduto() throws MalformedURLException {
 		produtoPage.clicarQtd();
-		produtoPage.clicarQtd();
-		produtoPage.colocarQtd("00");
+		produtoPage.colocarVinteItens();
 		cadastroPage.enter();
 	}
 
 	@Entao("^deve aparecer (\\d+) itens no carrinho$")
-	public void deveAparecerItensNoCarrinho(int arg1) {
+	public void deveAparecerItensNoCarrinho(int qtd) throws MalformedURLException {
 		String qtdProdutoCarrinho = produtoPage.qtdProdutoCarrinho();
 		int parseInt = Integer.parseInt(qtdProdutoCarrinho);
-		Assert.assertTrue(parseInt<=10);
+		Assert.assertTrue(parseInt <= qtd);
 	}
 }

@@ -1,10 +1,17 @@
 package br.com.rsinet.HUB_BDD.pageObjects;
 
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage {
+import br.com.rsinet.HUB_BDD.suporte.Driver;
+import io.appium.java_client.android.AndroidDriver;
+
+public class HomePage extends BasePage {
 	private WebDriver driver;
 
 	public HomePage(WebDriver driver) {
@@ -22,20 +29,41 @@ public class HomePage {
 	public void clicarMenu() {
 		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewMenu")).click();
 	}
+
 	public void clicarCarrinho() {
 		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewCart")).click();
 	}
 
-	public void clicarCategoria(String Categoria) {
+	public void clicarCategoria(String Categoria) throws MalformedURLException {
+		WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 		switch (Categoria) {
 		case "LAPTOPS":
-			getCatLaptop().click();
+			wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "LAPTOPS")));
+			clickToText((AndroidDriver) driver, "LAPTOPS");
 			break;
+
 		case "HEADPHONES":
-			getCatHeadPhones().click();
+			wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "HEADPHONES")));
+			clickToText((AndroidDriver) driver, "HEADPHONES");
 			break;
+
 		case "TABLETS":
-			getCatTablets().click();
+			wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "TABLETS")));
+			clickToText((AndroidDriver) driver, "TABLETS");
+			break;
+
+		case "SPEAKERS":
+			scrollToText((AndroidDriver) driver, "SPEAKERS");
+			wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "SPEAKERS")));
+			clickToText((AndroidDriver) driver, "SPEAKERS");
+			break;
+
+		case "MICE":
+			scrollToText((AndroidDriver) driver, "MICE");
+			wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "MICE")));
+			clickToText((AndroidDriver) driver, "MICE");
+			break;
+
 		default:
 			System.out.println("categoria nao encontrada");
 			break;

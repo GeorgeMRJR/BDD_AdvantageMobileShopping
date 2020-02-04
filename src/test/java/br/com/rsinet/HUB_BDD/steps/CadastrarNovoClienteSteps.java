@@ -53,7 +53,7 @@ public class CadastrarNovoClienteSteps {
 
 	@Entao("^Digito o nome de usuario \"([^\"]*)\"$")
 	public void digitoONomeDeUsuario(String userNameTxt) throws MalformedURLException {
-		
+
 		cadastroPage.digitarUserName(userNameTxt).enter();
 	}
 
@@ -119,7 +119,6 @@ public class CadastrarNovoClienteSteps {
 
 	@Entao("^clico no botao de registro$")
 	public void clicoNoBotaoDeRegistro() throws MalformedURLException {
-		cadastroPage.scroll();
 		cadastroPage.registrar();
 	}
 

@@ -2,6 +2,7 @@ package br.com.rsinet.HUB_BDD.steps;
 
 import java.net.MalformedURLException;
 
+import org.junit.AfterClass;
 import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.HUB_BDD.suporte.Driver;
@@ -20,7 +21,13 @@ public class Hooks {
 	}
 
 	@After(order = 0)
+	public void resetApp() throws MalformedURLException {
+		Driver.getDriver().resetApp();
+	}
+
+	@AfterClass
 	public void tearDown() {
 		Driver.fecharDriver();
+
 	}
 }

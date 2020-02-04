@@ -10,8 +10,7 @@ public class CategoriaProdutoPage {
 	private WebDriver driver;
 
 	public CategoriaProdutoPage(WebDriver driver) {
-		this.driver = driver;
-	}
+		this.driver = driver;	}
 
 	public String ProdutoNaoEncontrado() {
 		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewNoProductsToShow")).getText();

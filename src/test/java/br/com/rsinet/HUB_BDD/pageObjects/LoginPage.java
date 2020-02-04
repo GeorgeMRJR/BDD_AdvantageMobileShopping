@@ -8,8 +8,7 @@ public class LoginPage {
 	private WebDriver driver;
 
 	public LoginPage(WebDriver driver) {
-		this.driver = driver;
-	}
+		this.driver = driver;	}
 
 	public void clicarNovaConta() {
 		driver.findElement(By.id("com.Advantage.aShopping:id/textViewSingUpToday")).click();

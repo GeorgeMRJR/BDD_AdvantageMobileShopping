@@ -4,12 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class BuscaPage {
+
 	private WebDriver driver;
 
 	public BuscaPage(WebDriver driver) {
 		this.driver = driver;
 	}
-	
+
 	public String nomeProduto() {
 		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewProductName")).getText();
 	}

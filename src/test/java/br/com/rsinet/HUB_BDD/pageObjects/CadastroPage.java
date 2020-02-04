@@ -1,11 +1,8 @@
 package br.com.rsinet.HUB_BDD.pageObjects;
 
-
 import java.net.MalformedURLException;
-import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rsinet.HUB_BDD.suporte.Driver;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
 
-public class CadastroPage {
+public class CadastroPage extends BasePage {
 
 	private WebDriver driver;
 
@@ -30,8 +27,8 @@ public class CadastroPage {
 	}
 
 	private WebElement getEmail() {
-		return driver.findElement(
-				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextEmail']/child::*[1]"));
+		return driver
+				.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextEmail']/child::*[1]"));
 	}
 
 	private WebElement getSenha() {
@@ -167,37 +164,18 @@ public class CadastroPage {
 		return this;
 	}
 
-	public CadastroPage registrar() throws MalformedURLException {
-		try {
-			Driver.getDriver().hideKeyboard();
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-		getBtnRegistrar().click();
-
+	public void registrar() throws MalformedURLException {
 		WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+		Driver.getDriver().hideKeyboard();
+		scroll(0.8, 0.3);
+		scroll(0.8, 0.3);
+//		scrollToText((AndroidDriver) driver, "REGISTER");
+
+		wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "REGISTER")));
+//		clickToText((AndroidDriver) driver, "REGISTER");
+		getBtnRegistrar().click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.Advantage.aShopping:id/imageViewMenu")));
 
-		return this;
 	}
-//double inicio, double fim
-	public CadastroPage scroll() {
-		Dimension size = driver.manage().window().getSize();
-		
-//		int x = size.width / 2;
-//		int start_y = (int) (size.height * inicio);
-//		int end_y = (int) (size.height * fim);
-		try {
-			(new TouchAction<>(Driver.getDriver())).press(PointOption.point(508, 1130))
-			.waitAction((WaitOptions.waitOptions(Duration.ofMillis(500))))
-					.moveTo(PointOption.point(525, 483)).release().perform();
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-
-		return this;
-	}
-	
-	
 
 }
