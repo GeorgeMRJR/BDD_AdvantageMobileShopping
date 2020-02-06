@@ -4,7 +4,9 @@ import java.net.MalformedURLException;
 import java.util.Random;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import br.com.rsinet.HUB_BDD.pageObjects.CadastroPage;
 import br.com.rsinet.HUB_BDD.pageObjects.CategoriaProdutoPage;
@@ -38,11 +40,14 @@ public class AbrirUmProdutoPelaHomeSteps {
 
 	@E("^toco na categoria \"([^\"]*)\"$")
 	public void tocoNaCategoria(String categoria) throws MalformedURLException {
+
+		Driver.getWait()
+				.until(ExpectedConditions.elementToBeClickable(By.id("com.Advantage.aShopping:id/imageViewCategory")));
 		homePage.clicarCategoria(categoria);
 	}
 
 	@Entao("^deve abrir a tela da categoria \"([^\"]*)\"$")
-	public void deveAbrirATelaDaGategoria(String categoria) {
+	public void deveAbrirATelaDaGategoria(String categoria) throws MalformedURLException {
 		String txtCategoria = categoriaProdutoPage.txtCategoria();
 		Assert.assertTrue(txtCategoria.toUpperCase().contains(categoria));
 	}
@@ -63,7 +68,7 @@ public class AbrirUmProdutoPelaHomeSteps {
 		menuPage.abrirMenu();
 		menuPage.clicarLogin();
 		loginPage.clicarNovaConta();
-		cadastroPage.digitarUserName("Carrinho" + new Random().nextInt(1000)).enter();
+		cadastroPage.digitarUserName("Carrinho" + new Random().nextInt(100) + new Random().nextInt(100)).enter();
 		cadastroPage.digitarEmail("teste@teste.com").enter();
 		cadastroPage.digitarSenha("Abc123").enter();
 		cadastroPage.digitarReSenha("Abc123");
@@ -80,7 +85,7 @@ public class AbrirUmProdutoPelaHomeSteps {
 	}
 
 	@Entao("^deve aparecer (\\d+) itens no carrinho$")
-	public void deveAparecerItensNoCarrinho(int qtd) throws MalformedURLException {
+	public void deveAparecerItensNoCarrinho(int qtd) throws MalformedURLException, InterruptedException {
 		String qtdProdutoCarrinho = produtoPage.qtdProdutoCarrinho();
 		int parseInt = Integer.parseInt(qtdProdutoCarrinho);
 		Assert.assertTrue(parseInt <= qtd);

@@ -2,6 +2,9 @@ package br.com.rsinet.HUB_BDD.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import br.com.rsinet.HUB_BDD.suporte.Driver;
 
 public class MenuPage {
 	private WebDriver driver;
@@ -11,7 +14,9 @@ public class MenuPage {
 	}
 
 	public void abrirMenu() {
-		driver.findElement(By.id("com.Advantage.aShopping:id/imageViewMenu")).click();
+		Driver.getWait()
+				.until(ExpectedConditions.elementToBeClickable(By.id("com.Advantage.aShopping:id/imageViewMenu")))
+				.click();
 	}
 
 	public void clicarLogin() {

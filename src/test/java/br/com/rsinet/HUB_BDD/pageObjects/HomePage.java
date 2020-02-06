@@ -4,7 +4,6 @@ import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -35,54 +34,39 @@ public class HomePage extends BasePage {
 	}
 
 	public void clicarCategoria(String Categoria) throws MalformedURLException {
-		WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+		WebDriverWait wait = Driver.getWait();
 		switch (Categoria) {
 		case "LAPTOPS":
-			wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "LAPTOPS")));
-			clickToText((AndroidDriver) driver, "LAPTOPS");
+			wait.until(ExpectedConditions.elementToBeClickable(elementToText((AndroidDriver<?>) driver, "LAPTOPS")));
+			clickToText((AndroidDriver<?>) driver, "LAPTOPS");
 			break;
 
 		case "HEADPHONES":
-			wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "HEADPHONES")));
-			clickToText((AndroidDriver) driver, "HEADPHONES");
+			wait.until(ExpectedConditions.elementToBeClickable(elementToText((AndroidDriver<?>) driver, "HEADPHONES")));
+			clickToText((AndroidDriver<?>) driver, "HEADPHONES");
 			break;
 
 		case "TABLETS":
-			wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "TABLETS")));
-			clickToText((AndroidDriver) driver, "TABLETS");
+			wait.until(ExpectedConditions.elementToBeClickable(elementToText((AndroidDriver<?>) driver, "TABLETS")));
+			clickToText((AndroidDriver<?>) driver, "TABLETS");
 			break;
 
 		case "SPEAKERS":
-			scrollToText((AndroidDriver) driver, "SPEAKERS");
-			wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "SPEAKERS")));
-			clickToText((AndroidDriver) driver, "SPEAKERS");
+			scrollToText((AndroidDriver<?>) driver, "SPEAKERS");
+			wait.until(ExpectedConditions.elementToBeClickable(elementToText((AndroidDriver<?>) driver, "SPEAKERS")));
+			clickToText((AndroidDriver<?>) driver, "SPEAKERS");
 			break;
 
 		case "MICE":
-			scrollToText((AndroidDriver) driver, "MICE");
-			wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "MICE")));
-			clickToText((AndroidDriver) driver, "MICE");
+			scrollToText((AndroidDriver<?>) driver, "MICE");
+			wait.until(ExpectedConditions.elementToBeClickable(elementToText((AndroidDriver<?>) driver, "MICE")));
+			clickToText((AndroidDriver<?>) driver, "MICE");
 			break;
 
 		default:
 			System.out.println("categoria nao encontrada");
 			break;
 		}
-	}
-
-	private WebElement getCatLaptop() {
-		return driver.findElement(By.xpath(
-				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView"));
-	}
-
-	private WebElement getCatHeadPhones() {
-		return driver.findElement(By.xpath(
-				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[2]/android.widget.TextView"));
-	}
-
-	private WebElement getCatTablets() {
-		return driver.findElement(By.xpath(
-				"//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[3]/android.widget.TextView"));
 	}
 
 }

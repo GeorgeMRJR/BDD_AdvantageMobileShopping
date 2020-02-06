@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,10 +23,11 @@ public class ProdutoPage {
 		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewProductName")).getText();
 	}
 
-	public String qtdProdutoCarrinho() throws MalformedURLException {
-		WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.Advantage.aShopping:id/textViewCartLength")));
-		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewCartLength")).getText();
+	public String qtdProdutoCarrinho() throws MalformedURLException, InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement element = wait
+				.until(ExpectedConditions.elementToBeClickable(By.id("com.Advantage.aShopping:id/textViewCartLength")));
+		return element.getText();
 	}
 
 	public void clicarQtd() {
@@ -33,6 +35,8 @@ public class ProdutoPage {
 	}
 
 	public void colocarVinteItens() throws MalformedURLException {
+		Driver.getWait()
+				.until(ExpectedConditions.elementToBeClickable(By.id("com.Advantage.aShopping:id/textViewApply")));
 		Driver.getDriver().pressKey(new KeyEvent(AndroidKey.NUMPAD_2));
 		Driver.getDriver().pressKey(new KeyEvent(AndroidKey.NUMPAD_0));
 		Driver.getDriver().pressKey(new KeyEvent(AndroidKey.ENTER));

@@ -1,4 +1,4 @@
- #language: pt
+#language: pt
 @BuscarUmProduto
 Funcionalidade: Deve Bususcar um produto
   
@@ -16,10 +16,10 @@ Funcionalidade: Deve Bususcar um produto
     Entao a pagina do "<Produto>" sera exibida
 
     Exemplos: Buscar um produto existente
-      | Produto                       |
-      | HP USB 3 BUTTON OPTICAL MOUSE |
-      | LOGITECH USB HEADSET H390     |
-      | HP STREAM - 11-D020NR LAPTOP  |
+      | Produto                              |
+      | HP USB 3 BUTTON OPTICAL MOUSE        |
+      | LOGITECH USB HEADSET H390            |
+      | BOSE SOUNDLINK BLUETOOTH SPEAKER III |
 
   @TesteNegativo
   Esquema do Cenario: Buscar um produto nexistente

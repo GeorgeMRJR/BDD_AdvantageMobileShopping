@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rsinet.HUB_BDD.suporte.Driver;
 import io.appium.java_client.TouchAction;
@@ -77,15 +76,11 @@ public class CadastroPage extends BasePage {
 	}
 
 	private WebElement getContinente() {
-		return driver.findElement(By.xpath("com.Advantage.aShopping:id/textViewCountriesTitle"));
+		return driver.findElement(By.id("com.Advantage.aShopping:id/linearLayoutCountry"));
 	}
-//
-//	private WebElement getContinentes() {
-//		return driver.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/select_dialog_listview']"));
-//	}
 
 	private WebElement getBtnRegistrar() {
-		return driver.findElement(By.className("android.widget.Button"));
+		return driver.findElement(By.id("com.Advantage.aShopping:id/buttonRegister"));
 	}
 
 	public CadastroPage enter() throws MalformedURLException {
@@ -164,17 +159,26 @@ public class CadastroPage extends BasePage {
 		return this;
 	}
 
+	public CadastroPage escolherContinente(String visibleText) throws MalformedURLException {
+
+		scrollToText((AndroidDriver<?>) driver, visibleText);
+		Driver.getWait().until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver<?>) driver, visibleText)));
+		clickToText((AndroidDriver<?>) driver, visibleText);
+		return this;
+	}
+
 	public void registrar() throws MalformedURLException {
-		WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 		Driver.getDriver().hideKeyboard();
 		scroll(0.8, 0.3);
 		scroll(0.8, 0.3);
-//		scrollToText((AndroidDriver) driver, "REGISTER");
 
-		wait.until(ExpectedConditions.visibilityOf(elementToText((AndroidDriver) driver, "REGISTER")));
-//		clickToText((AndroidDriver) driver, "REGISTER");
-		getBtnRegistrar().click();
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.Advantage.aShopping:id/imageViewMenu")));
+		try {
+			Driver.getWait().until(ExpectedConditions.elementToBeClickable(getBtnRegistrar())).click();
+		} catch (Exception e) {
+			Driver.getWait().until(
+					ExpectedConditions.elementToBeClickable(elementToText((AndroidDriver<?>) driver, "REGISTER")))
+					.click();
+		}
 
 	}
 

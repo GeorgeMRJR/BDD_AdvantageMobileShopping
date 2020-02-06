@@ -9,6 +9,8 @@ import br.com.rsinet.HUB_BDD.suporte.Driver;
 import br.com.rsinet.HUB_BDD.suporte.Screenshot;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 
 public class Hooks {
 	private WebDriver driver;
@@ -21,8 +23,17 @@ public class Hooks {
 	}
 
 	@After(order = 0)
-	public void resetApp() throws MalformedURLException {
-		Driver.getDriver().resetApp();
+	public void resetApp() throws MalformedURLException, InterruptedException {
+		AndroidDriver<MobileElement> androidDriver = Driver.getDriver();
+		try {
+			androidDriver.resetApp();
+		} catch (Exception e) {
+			Driver.fecharDriver();
+			System.out.println(e.getMessage());
+		}
+
+		Thread.sleep(1000);
+//		Driver.fecharDriver();
 	}
 
 	@AfterClass

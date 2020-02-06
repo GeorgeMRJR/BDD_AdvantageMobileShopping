@@ -15,28 +15,19 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class BasePage {
 
-//	public BasePage(WebDriver driver) {
-//	}
-
-//	public static void scrollAndClick(AndroidDriver driver, String visibleText) {
-//		driver.findElementByAndroidUIAutomator(
-//				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""
-//						+ visibleText + "\").instance(0))")
-//				.click();
-//	}
-//
-	public void scrollToText(AndroidDriver driver, String visibleText) {
+	public void scrollToText(AndroidDriver<?> driver, String visibleText) {
 		driver.findElementByAndroidUIAutomator(
 				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""
 						+ visibleText + "\").instance(0))");
 	}
 
-	public void clickToText(AndroidDriver driver, String visibleText) {
+	public void clickToText(AndroidDriver<?> driver, String visibleText) {
 		driver.findElement(MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + visibleText + "\")"))
 				.click();
 	}
 
-	public WebElement elementToText(AndroidDriver driver, String visibleText) {
+	public WebElement elementToText(AndroidDriver<?> driver, String visibleText) throws MalformedURLException {
+
 		return driver
 				.findElement(MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + visibleText + "\")"));
 	}

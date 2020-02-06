@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -29,6 +30,10 @@ public class Driver {
 		driver = new AndroidDriver<MobileElement>(remoteUrl, desiredCapabilities);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
+	}
+
+	public static WebDriverWait getWait() {
+		return new WebDriverWait(driver, 10);
 	}
 
 	public static void fecharDriver() {

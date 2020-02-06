@@ -12,7 +12,6 @@ import br.com.rsinet.HUB_BDD.suporte.Driver;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 
-
 public class BuscarUmProdutoSteps {
 	private WebDriver driver;
 	private HomePage homePage;
@@ -47,14 +46,15 @@ public class BuscarUmProdutoSteps {
 	}
 
 	@Entao("^o usuario toca no produto$")
-	public void oUsuarioTocaNoProduto() {
+	public void oUsuarioTocaNoProduto() throws InterruptedException {
+
 		buscaPage.clicarProduto();
 	}
 
 	@Entao("^a pagina do \"([^\"]*)\" sera exibida$")
 	public void aPaginaDoSeraExibida(String produtoEsperado) {
-	String produtoAtual = produtoPage.nomeProduto();
-	Assert.assertEquals(produtoEsperado, produtoAtual);
+		String produtoAtual = produtoPage.nomeProduto();
+		Assert.assertEquals(produtoEsperado, produtoAtual);
 	}
 
 	@Entao("^aparecera uma pagina informando que o produto \"([^\"]*)\" nao foi encontrado$")

@@ -1,6 +1,7 @@
 package br.com.rsinet.HUB_BDD.steps;
 
 import java.net.MalformedURLException;
+import java.util.Random;
 
 import org.junit.Assert;
 
@@ -32,7 +33,7 @@ public class CadastrarNovoClienteSteps {
 	}
 
 	@Dado("^toco no menu$")
-	public void tocoNoMenu() {
+	public void tocoNoMenu() throws MalformedURLException {
 		menuPage.abrirMenu();
 	}
 
@@ -54,7 +55,7 @@ public class CadastrarNovoClienteSteps {
 	@Entao("^Digito o nome de usuario \"([^\"]*)\"$")
 	public void digitoONomeDeUsuario(String userNameTxt) throws MalformedURLException {
 
-		cadastroPage.digitarUserName(userNameTxt).enter();
+		cadastroPage.digitarUserName(userNameTxt + new Random().nextInt(100) + new Random().nextInt(100)).enter();
 	}
 
 	@Entao("^Digito o email \"([^\"]*)\"$")
@@ -88,8 +89,9 @@ public class CadastrarNovoClienteSteps {
 	}
 
 	@Entao("^Seleciono o continente \"([^\"]*)\"$")
-	public void selecionoOContinente(String arg1) {
-//		cadastroPage.clicarContinente();
+	public void selecionoOContinente(String continente) throws MalformedURLException {
+		cadastroPage.clicarContinente();
+		cadastroPage.escolherContinente(continente);
 	}
 
 	@Entao("^Digito o estado \"([^\"]*)\"$")
@@ -123,7 +125,7 @@ public class CadastrarNovoClienteSteps {
 	}
 
 	@Entao("^o usuario estara cadastrado$")
-	public void oUsuarioEstaraCadastrado() {
+	public void oUsuarioEstaraCadastrado() throws MalformedURLException {
 		menuPage.abrirMenu();
 		boolean logado = menuPage.logado();
 		Assert.assertTrue(logado);
@@ -153,7 +155,7 @@ public class CadastrarNovoClienteSteps {
 	}
 
 	@Entao("^o cadastro nao sera realisado$")
-	public void oCadastroNaoSeraRealisado() {
+	public void oCadastroNaoSeraRealisado() throws MalformedURLException {
 		menuPage.abrirMenu();
 		boolean logado = menuPage.logado();
 		Assert.assertFalse(logado);

@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
-			<version>7.0.0</version>
+			<version>7.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -46,11 +46,6 @@
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports-cucumber4-adapter</artifactId>
 			<version>1.0.7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>3.141.59</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
