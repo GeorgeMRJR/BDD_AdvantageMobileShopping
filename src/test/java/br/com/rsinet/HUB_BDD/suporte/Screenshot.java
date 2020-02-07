@@ -20,7 +20,7 @@ public class Screenshot {
 		try {
 			File sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-			File destinationPath = new File(System.getProperty("user.dir") + "/target/screenshot/" + screenshotName
+			File destinationPath = new File(System.getProperty("user.dir") + "/report/screenshot/" + screenshotName
 					+ Generator.dataHoraParaArquivo() + ".png");
 			Files.copy(sourcePath, destinationPath);
 

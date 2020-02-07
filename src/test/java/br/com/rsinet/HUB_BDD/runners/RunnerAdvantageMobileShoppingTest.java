@@ -12,24 +12,16 @@ import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/feature",
-					glue = "br.com.rsinet.HUB_BDD.steps", 
-					tags = {
+@CucumberOptions(features = "src/test/resources/feature", glue = "br.com.rsinet.HUB_BDD.steps", tags = {
 //							"@BuscarUmProduto"
 
-							},
-					plugin = { "pretty", 
-								//"html:target/report-html",
-								"com.cucumber.listener.ExtentCucumberFormatter:target/report_BDD_AdvantageMobileShopping.html"
-							}, 
-					monochrome = true, 
-					snippets = SnippetType.CAMELCASE, 
-					dryRun = false, 
-					strict = false)
+}, plugin = { "pretty",
+		// "html:target/report-html",
+		"com.cucumber.listener.ExtentCucumberFormatter:report/report_BDD_AdvantageMobileShopping.html" }, monochrome = true, snippets = SnippetType.CAMELCASE, dryRun = false, strict = false)
 public class RunnerAdvantageMobileShoppingTest {
 
 	@AfterClass
-	public static void  writeExtentReport() {
+	public static void writeExtentReport() {
 		Reporter.loadXMLConfig(new File("src/test/java/br/com/rsinet/HUB_BDD/suporte/extension-config.xml"));
 		Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
 		Reporter.setSystemInfo("Time zone", System.getProperty("user.timezone"));
@@ -39,6 +31,6 @@ public class RunnerAdvantageMobileShoppingTest {
 		Reporter.setSystemInfo("cucumber-java", "1.2.5");
 		Reporter.setSystemInfo("cucumber-junit", "1.2.5");
 		Reporter.setSystemInfo("Maven", "4.0.0");
-	    Reporter.setSystemInfo("Java Version", "1.8");
+		Reporter.setSystemInfo("Java Version", "1.8");
 	}
 }
