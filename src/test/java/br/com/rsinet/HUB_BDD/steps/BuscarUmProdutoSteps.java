@@ -10,6 +10,7 @@ import br.com.rsinet.HUB_BDD.pageObjects.HomePage;
 import br.com.rsinet.HUB_BDD.pageObjects.ProdutoPage;
 import br.com.rsinet.HUB_BDD.suporte.Driver;
 import cucumber.api.java.pt.Dado;
+import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 
 public class BuscarUmProdutoSteps {
@@ -29,12 +30,12 @@ public class BuscarUmProdutoSteps {
 	public void queEstouNaTelaPrincipalDoAplicativoAndroidAdvantageMobileShopping() {
 	}
 
-	@Dado("^o usuario tocou no icone da lupa$")
+	@E("^o usuario tocou no icone da lupa$")
 	public void oUsuarioTocouNoIconeDaLupa() {
 		homePage.clicarLupa();
 	}
 
-	@Dado("^buscou no campo de busca o \"([^\"]*)\"$")
+	@E("^buscou no campo de busca o \"([^\"]*)\"$")
 	public void buscouNoCampoDeBuscaO(String produto) {
 		homePage.buscar(produto);
 	}
@@ -45,7 +46,7 @@ public class BuscarUmProdutoSteps {
 		Assert.assertEquals(produto, atual);
 	}
 
-	@Entao("^o usuario toca no produto$")
+	@E("^o usuario toca no produto$")
 	public void oUsuarioTocaNoProduto() throws InterruptedException {
 
 		buscaPage.clicarProduto();

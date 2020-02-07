@@ -24,11 +24,17 @@ public class MenuPage {
 	}
 
 	public boolean logado() {
+		boolean displayed = false;
 		try {
-			return driver.findElement(By.id("com.Advantage.aShopping:id/textViewMenuSignOut")).isDisplayed();
+			Driver.offImplicitlyWait();
+			displayed = driver.findElement(By.id("com.Advantage.aShopping:id/textViewMenuSignOut")).isDisplayed();
+			Driver.onImplicitlyWait();
+			return displayed;
 		} catch (Exception e) {
-			return false;
+
 		}
+
+		return displayed;
 	}
 
 }

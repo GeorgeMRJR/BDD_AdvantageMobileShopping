@@ -25,7 +25,6 @@ Funcionalidade: Cadastro de novo usuario
     E Digito o endereco "<Endereco>"
     E Digito a cidade "<Cidade>"
     E Digito o codigo postal "<Cep>"
-    Entao o botao de registrar deve estar abilitado
     E clico no botao de registro
     Entao o usuario estara cadastrado
 
@@ -48,7 +47,6 @@ Funcionalidade: Cadastro de novo usuario
     E Digito o endereco "<Endereco>"
     E Digito a cidade "<Cidade>"
     E Digito o codigo postal "<Cep>"
-    Entao o botao de registrar deve estar abilitado
     E clico no botao de registro
     Entao o cadastro nao sera realisado
 

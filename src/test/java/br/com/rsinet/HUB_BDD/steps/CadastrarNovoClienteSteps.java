@@ -10,6 +10,7 @@ import br.com.rsinet.HUB_BDD.pageObjects.LoginPage;
 import br.com.rsinet.HUB_BDD.pageObjects.MenuPage;
 import br.com.rsinet.HUB_BDD.suporte.Driver;
 import cucumber.api.java.pt.Dado;
+import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -32,7 +33,7 @@ public class CadastrarNovoClienteSteps {
 	public void queEstouNoAplicativoAndroidAdvantageMobileShopping() {
 	}
 
-	@Dado("^toco no menu$")
+	@E("^toco no menu$")
 	public void tocoNoMenu() throws MalformedURLException {
 		menuPage.abrirMenu();
 	}
@@ -49,77 +50,71 @@ public class CadastrarNovoClienteSteps {
 
 	@Entao("^a tela de cadastro abrira$")
 	public void aTelaDeCadastroAbrira() {
-
 	}
 
-	@Entao("^Digito o nome de usuario \"([^\"]*)\"$")
+	@E("^Digito o nome de usuario \"([^\"]*)\"$")
 	public void digitoONomeDeUsuario(String userNameTxt) throws MalformedURLException {
 
 		cadastroPage.digitarUserName(userNameTxt + new Random().nextInt(100) + new Random().nextInt(100)).enter();
 	}
 
-	@Entao("^Digito o email \"([^\"]*)\"$")
+	@E("^Digito o email \"([^\"]*)\"$")
 	public void digitoOEmail(String emailTxt) throws MalformedURLException {
 		cadastroPage.digitarEmail(emailTxt).enter();
 	}
 
-	@Entao("^Digito a senha \"([^\"]*)\"$")
+	@E("^Digito a senha \"([^\"]*)\"$")
 	public void digitoASenha(String senhaTxt) throws MalformedURLException {
 		cadastroPage.digitarSenha(senhaTxt).enter();
 	}
 
-	@Entao("^Digito a comfirmacao da senha \"([^\"]*)\"$")
+	@E("^Digito a comfirmacao da senha \"([^\"]*)\"$")
 	public void digitoAComfirmacaoDaSenha(String reSenhaTxt) throws MalformedURLException {
 		cadastroPage.digitarReSenha(reSenhaTxt).enter();
 	}
 
-	@Entao("^Digito o primeiro nome \"([^\"]*)\"$")
+	@E("^Digito o primeiro nome \"([^\"]*)\"$")
 	public void digitoOPrimeiroNome(String nomeTxt) throws MalformedURLException {
 		cadastroPage.digitarNome(nomeTxt).enter();
 	}
 
-	@Entao("^Digito o sobre nome \"([^\"]*)\"$")
+	@E("^Digito o sobre nome \"([^\"]*)\"$")
 	public void digitoOSobreNome(String sobreNomeTxt) throws MalformedURLException {
 		cadastroPage.digitarSobreNome(sobreNomeTxt).enter();
 	}
 
-	@Entao("^Digito o telefone \"([^\"]*)\"$")
+	@E("^Digito o telefone \"([^\"]*)\"$")
 	public void digitoOTelefone(String telefoneTxt) throws MalformedURLException {
 		cadastroPage.digitarTelefone(telefoneTxt).enter();
 	}
 
-	@Entao("^Seleciono o continente \"([^\"]*)\"$")
+	@E("^Seleciono o continente \"([^\"]*)\"$")
 	public void selecionoOContinente(String continente) throws MalformedURLException {
 		cadastroPage.clicarContinente();
 		cadastroPage.escolherContinente(continente);
 	}
 
-	@Entao("^Digito o estado \"([^\"]*)\"$")
+	@E("^Digito o estado \"([^\"]*)\"$")
 	public void digitoOEstado(String estadoTxt) throws MalformedURLException {
 		cadastroPage.digitarEstado(estadoTxt).enter();
 	}
 
-	@Entao("^Digito o endereco \"([^\"]*)\"$")
+	@E("^Digito o endereco \"([^\"]*)\"$")
 	public void digitoOEndereco(String enderecoTxt) throws MalformedURLException {
 		cadastroPage.digitarEndereco(enderecoTxt).enter();
 	}
 
-	@Entao("^Digito a cidade \"([^\"]*)\"$")
+	@E("^Digito a cidade \"([^\"]*)\"$")
 	public void digitoACidade(String cidadeTxt) throws MalformedURLException {
 		cadastroPage.digitarCidade(cidadeTxt).enter();
 	}
 
-	@Entao("^Digito o codigo postal \"([^\"]*)\"$")
+	@E("^Digito o codigo postal \"([^\"]*)\"$")
 	public void digitoOCodigoPostal(String cepTxt) throws MalformedURLException {
 		cadastroPage.digitarCep(cepTxt).enter();
 	}
 
-	@Entao("^o botao de registrar deve estar abilitado$")
-	public void oBotaoDeRegistrarDeveEstarAbilitado() {
-
-	}
-
-	@Entao("^clico no botao de registro$")
+	@E("^clico no botao de registro$")
 	public void clicoNoBotaoDeRegistro() throws MalformedURLException {
 		cadastroPage.registrar();
 	}

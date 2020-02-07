@@ -20,6 +20,8 @@ public class ProdutoPage {
 	}
 
 	public String nomeProduto() {
+		Driver.getWait().until(
+				ExpectedConditions.elementToBeClickable(By.id("com.Advantage.aShopping:id/buttonProductAddToCart")));
 		return driver.findElement(By.id("com.Advantage.aShopping:id/textViewProductName")).getText();
 	}
 

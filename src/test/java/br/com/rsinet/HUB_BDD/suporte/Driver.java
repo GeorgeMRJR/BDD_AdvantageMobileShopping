@@ -28,12 +28,8 @@ public class Driver {
 
 		URL remoteUrl = new URL("http://127.0.0.1:4723/wd/hub");
 		driver = new AndroidDriver<MobileElement>(remoteUrl, desiredCapabilities);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		onImplicitlyWait();
 		return driver;
-	}
-
-	public static WebDriverWait getWait() {
-		return new WebDriverWait(driver, 10);
 	}
 
 	public static void fecharDriver() {
@@ -41,5 +37,21 @@ public class Driver {
 			driver.quit();
 			driver = null;
 		}
+	}
+
+	public static void onImplicitlyWait() {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+
+	public static void offImplicitlyWait() {
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+	}
+
+	public static WebDriverWait getWait() {
+		return new WebDriverWait(driver, 10);
+	}
+
+	public static WebDriverWait getWait(int seg) {
+		return new WebDriverWait(driver, seg);
 	}
 }

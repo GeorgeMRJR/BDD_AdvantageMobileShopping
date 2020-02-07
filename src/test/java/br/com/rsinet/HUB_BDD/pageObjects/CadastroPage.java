@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import br.com.rsinet.HUB_BDD.suporte.Driver;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.touch.offset.PointOption;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class CadastroPage extends BasePage {
 
@@ -21,62 +21,63 @@ public class CadastroPage extends BasePage {
 	}
 
 	private WebElement getUsername() {
-		return driver.findElement(
-				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextUserName']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextUserName']/child::*[1]")));
 	}
 
 	private WebElement getEmail() {
-		return driver
-				.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextEmail']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextEmail']/child::*[1]")));
 	}
 
 	private WebElement getSenha() {
-		return driver.findElement(
-				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextPassword']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextPassword']/child::*[1]")));
 	}
 
 	private WebElement getReSenha() {
-		return driver.findElement(
-				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextConfirmPassword']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextConfirmPassword']/child::*[1]")));
 	}
 
 	private WebElement getPrimeiroNome() {
-		return driver.findElement(
-				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextFirstName']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextFirstName']/child::*[1]")));
 	}
 
 	private WebElement getSobreNome() {
-		return driver.findElement(
-				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextLastName']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextLastName']/child::*[1]")));
 	}
 
 	private WebElement getTelefone() {
-		return driver.findElement(
-				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextPhoneNumber']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextPhoneNumber']/child::*[1]")));
 	}
 
 	private WebElement getEstado() {
-		return driver
-				.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextState']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextState']/child::*[1]")));
 	}
 
 	private WebElement getCidade() {
-		return driver
-				.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextCity']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextCity']/child::*[1]")));
 	}
 
 	private WebElement getEndereco() {
-		return driver
-				.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextStreet']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextStreet']/child::*[1]")));
 	}
 
 	private WebElement getCep() {
-		return driver
-				.findElement(By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextZip']/child::*[1]"));
+		return Driver.getWait().until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextZip']/child::*[1]")));
 	}
 
 	private WebElement getContinente() {
-		return driver.findElement(By.id("com.Advantage.aShopping:id/linearLayoutCountry"));
+		return Driver.getWait().until(
+				ExpectedConditions.elementToBeClickable(By.id("com.Advantage.aShopping:id/linearLayoutCountry")));
 	}
 
 	private WebElement getBtnRegistrar() {
@@ -84,7 +85,9 @@ public class CadastroPage extends BasePage {
 	}
 
 	public CadastroPage enter() throws MalformedURLException {
-		(new TouchAction<>(Driver.getDriver())).tap(PointOption.point(985, 1699)).perform();
+//		(new TouchAction<>(Driver.getDriver())).tap(PointOption.point(985, 1699)).perform();
+		Driver.getDriver().pressKey(new KeyEvent(AndroidKey.ENTER));
+
 		return this;
 	}
 

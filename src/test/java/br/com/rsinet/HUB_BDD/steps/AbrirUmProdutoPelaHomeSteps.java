@@ -52,7 +52,7 @@ public class AbrirUmProdutoPelaHomeSteps {
 		Assert.assertTrue(txtCategoria.toUpperCase().contains(categoria));
 	}
 
-	@Dado("^toco no produto \"([^\"]*)\"$")
+	@E("^toco no produto \"([^\"]*)\"$")
 	public void tocoNoProduto(String produto) {
 		categoriaProdutoPage.clicarproduto(produto.toUpperCase());
 	}
@@ -77,7 +77,7 @@ public class AbrirUmProdutoPelaHomeSteps {
 
 	}
 
-	@Entao("^coloco vinte itens do produto$")
+	@E("^coloco vinte itens do produto$")
 	public void colocoItensDoProduto() throws MalformedURLException {
 		produtoPage.clicarQtd();
 		produtoPage.colocarVinteItens();
